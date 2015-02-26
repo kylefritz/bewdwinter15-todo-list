@@ -1,0 +1,32 @@
+/*
+ * = require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "jumbotron-narrow";
+
+form.button_to{
+  display: inline-block;
+
+  input[type=submit]{
+    // using "extend" here brings in the bootstrap button styling.
+    // because I'm using button_to, I can't set the class on the
+    // input[type=submit] itself
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-xs;
+  }
+}
+
+ul#user-list{
+  li{
+    padding: 10px 0;
+  }
+}
+
+
+.header h3 a{
+  // this color is defined in bootstrap-sass
+  color: $text-muted;
+}

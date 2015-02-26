@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Todo</title>
+  <title>Amzing List</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>TODO</h1>
-  <% if session[:user_id].present? %>
-    <aside>
-      Logged in as <%= User.find(session[:user_id]).name %>.
-      <%= link_to 'Change login', users_path %>
-    </aside>
-  <% end %>
-  <%= yield %>
+  <div class="container">
+    <div class="header">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <% if session[:user_id].present? %>
+            <li role="presentation" class="active">
+              <a href="#"><%= User.find(session[:user_id]).name %></a>
+            </li>
+          <li role="presentation"><%= link_to 'Change User', users_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+      <h3 class="text-muted">
+        <a href="<%= root_path %>">
+          Amzing List
+        </a>
+      </h3>
+    </div>
+
+    <%= yield %>
+
+    <footer class="footer">
+      <p>&copy; Amazing Shit Everyday <%= Time.zone.now.year %></p>
+    </footer>
+
+  </div> <!-- /container -->
+
 
 </body>
 </html>

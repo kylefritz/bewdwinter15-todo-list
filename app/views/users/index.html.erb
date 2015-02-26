@@ -1,9 +1,15 @@
-<h2>Login as a User</h2>
-<ul>
-  <% @users.each do |user| %>
-    <li><%= button_to user.name, login_users_path, params: {user_id: user.id} %></li>
-  <% end %>
-</ul>
+<% if @users.any? %>
+  <h2>Login as a User</h2>
+  <ul id="user-list">
+    <% @users.each do |user| %>
+      <li><%= button_to user.name, login_users_path, params: {user_id: user.id} %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-
-<%= link_to 'Add User', new_user_path %>
+<h2>Sign Up</h2>
+<p>
+  <a class="btn btn-success" href="<%= new_user_path %>">
+    Add User
+  </a>
+</p>
