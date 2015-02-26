@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <h1>TODO</h1>
+  <% if session[:user_id].present? %>
+    <aside>
+      Logged in as <%= User.find(session[:user_id]).name %>.
+      <%= link_to 'Change login', users_path %>
+    </aside>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>
