@@ -10,4 +10,13 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  protected
+
+  def require_current_user
+    if current_user.blank?
+      redirect_to users_path, notice: "You must log in"
+    end
+  end
+
 end

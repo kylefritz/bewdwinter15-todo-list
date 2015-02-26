@@ -5,4 +5,5 @@ Rails.application.routes.draw do
       post :login, as: :login
     end
   end
+  resources :lists
 end

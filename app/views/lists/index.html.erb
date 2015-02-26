@@ -1,0 +1,17 @@
+<h2>Your lists</h2>
+
+<% if @lists.any? %>
+  <ul>
+    <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><em>You have no lists!</em></p>
+<% end %>
+
+<p>
+  <a class="btn btn-success" href="<%= new_list_path %>">
+    Add a list
+  </a>
+</p>
