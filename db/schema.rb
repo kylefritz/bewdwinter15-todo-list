@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226033508) do
+ActiveRecord::Schema.define(version: 20150304231319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: true do |t|
+    t.integer  "list_id"
+    t.string   "name"
+    t.datetime "due_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "items", ["list_id"], name: "index_items_on_list_id", using: :btree
 
   create_table "lists", force: true do |t|
     t.string   "name",       null: false
