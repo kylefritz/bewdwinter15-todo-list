@@ -1,1 +1,6 @@
 == Amzing List: A TODO List
+
+TODO:
+ * Create Tags resource
+ * Associate Tags with Items
+ * List Items for Tags
