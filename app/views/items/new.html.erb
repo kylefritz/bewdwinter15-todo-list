@@ -1,6 +1,6 @@
 <h2>Add Item</h2>
 
-<%= form_for @item do |f| %>
+<%= form_for [@list, @item] do |f| %>
 
   <div class="form-group">
     <%= f.label :name %>

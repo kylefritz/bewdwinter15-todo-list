@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       post :login, as: :login
     end
   end
-  resources :lists
-  resources :items
+  resources :lists do
+    resources :items, only: [:new, :create]
+  end
 end
