@@ -1,7 +1,16 @@
 <h2><%= @list.name %></h2>
 
-<p>
-  <em>TODO: put list items here</em>
-</p>
+<ul>
+  <% @list.items.each do |item| %>
+    <li>
+        <%= item.name %>
+        <% if item.due_at.present? %>
+          <em>Due: <%= time_ago_in_words(item.due_at) %></em>
+        <% end %>
+        <%= link_to "Edit", edit_item_path(item) %>
+        <%= button_to "Destroy", item_path(item), method: :delete %>
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to "Add item", new_list_item_path(@list) %>
