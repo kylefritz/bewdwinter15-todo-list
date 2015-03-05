@@ -1,5 +1,20 @@
 == Amzing List: A TODO List
 
+# For this weekend: Make the TODO list App Again
+
+In class we came up with the idea for all the resources at the beginning so that we could talk about modeling. In real-life, models usually come out of a business need. When you re-create the TODO list app try doing things in the order below. Use rails migrations to modify your schema.
+
+1. Create an extremely simple TODO list app. It only has one resouce: Tasks. Make a form to create tasks, be able to delete tasks.
+2. "Realize" that your app should support multiple users! Create a users resource and migrate your tasks to be associated with a specific user.
+3. "Realize" that your users want to be able to organize their tasks into lists. Create a Lists resource and associate your tasks with the lists.
+4. "Realize" that your users want to be able to tag their tasks. Create a tags resource (each user should have their own set of tags). Create a "taggings" table that joins tasks with tags.
+
+# On Monday we will
+
+1. Go over adding tags to tasks
+2. Go over questions from "making the todo list app again"
+3. Introduce Jotly
+
 TODO:
  * Create Tags resource
  * Associate Tags with Items
